@@ -76,7 +76,36 @@ print(p.position())
     
     
   # Scroll down little faster and less smooth
-for i in range(20):        # Scroll 20 times
-    p.scroll(-50)           # Scroll down 5 units (small step)
+# for i in range(20):        # Scroll 20 times
+#     p.scroll(-50)           # Scroll down 5 units (small step)
       
       
+      
+p.mouseDown(x=128, y=146, button='left')  # Press down (start of click/drag)
+p.mouseUp(x=800, y=600, button='left')    # Release (end of click/drag)
+# The reason your code is not selecting text is because pyautogui.mouseDown() 
+# and mouseUp() do not move the mouse between the two points — they just press
+# and release at whatever position the cursor is currently at (unless you 
+# explicitly move the mouse).
+
+
+
+#To select:
+
+# Move to start point
+p.moveTo(128, 146)
+p.mouseDown(button='left')  # Press and hold the mouse button
+
+# Move to end point (this is what actually selects)
+p.moveTo(800, 600, duration=0.5)
+
+# Release the mouse button
+p.mouseUp(button='left')
+
+
+#  OR use p.moveTo and p.dragTo function.
+import pyautogui as p
+
+p.moveTo(148, 170)  # Go to start position
+p.dragTo(500, 500, duration=1, button='left')  # Drag while holding left mouse button
+
