@@ -40,3 +40,6 @@ p.dragTo(100, 322, duration=5)  # drag mouse to XY
 # p.dragTo(600, 300, duration=2, button='left')
 
 p.dragRel(500, 100, duration=5, button='left')  # drag mouse relative to its current position
+
+
+# p.click(x=200, y=500, clicks=2, interval=0.2, button='left')
