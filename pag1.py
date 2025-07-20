@@ -162,3 +162,12 @@ print(p.position())
 # 'OK'
 # p.prompt('This lets the user type in a string and press OK.')
 
+
+# # Take screenshot and save it as a file
+p.screenshot('img.png')
+
+# # Or just get the screenshot as a Pillow image object
+a = p.screenshot()
+a.show()  # Optional: shows the image
+
+# p.locateOnScreen('img.png')
