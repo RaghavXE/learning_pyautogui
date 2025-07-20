@@ -81,8 +81,8 @@ print(p.position())
       
       
       
-p.mouseDown(x=128, y=146, button='left')  # Press down (start of click/drag)
-p.mouseUp(x=800, y=600, button='left')    # Release (end of click/drag)
+# p.mouseDown(x=128, y=146, button='left')  # Press down (start of click/drag)
+# p.mouseUp(x=800, y=600, button='left')    # Release (end of click/drag)
 # The reason your code is not selecting text is because pyautogui.mouseDown() 
 # and mouseUp() do not move the mouse between the two points — they just press
 # and release at whatever position the cursor is currently at (unless you 
@@ -93,19 +93,29 @@ p.mouseUp(x=800, y=600, button='left')    # Release (end of click/drag)
 #To select:
 
 # Move to start point
-p.moveTo(128, 146)
-p.mouseDown(button='left')  # Press and hold the mouse button
+# p.moveTo(128, 146)
+# p.mouseDown(button='left')  # Press and hold the mouse button
 
-# Move to end point (this is what actually selects)
-p.moveTo(800, 600, duration=0.5)
+# # Move to end point (this is what actually selects)
+# p.moveTo(800, 600, duration=0.5)
 
-# Release the mouse button
-p.mouseUp(button='left')
+# # Release the mouse button
+# p.mouseUp(button='left')
 
 
-#  OR use p.moveTo and p.dragTo function.
-import pyautogui as p
+# #  OR use p.moveTo and p.dragTo function.
+# import pyautogui as p
 
-p.moveTo(148, 170)  # Go to start position
-p.dragTo(500, 500, duration=1, button='left')  # Drag while holding left mouse button
+# p.moveTo(148, 170)  # Go to start position
+# p.dragTo(500, 500, duration=1, button='left')  # Drag while holding left mouse button
+
+
+
+# Key presses go to wherever the keyboard cursor is at function-calling time.
+
+# p.typewrite(['a', 'b', 'c', '\n','left', 'backspace', 'enter', 'f1'], interval=2)
+
+p.typewrite(['\n', 'o'], interval=2)
+p.typewrite('64df8gh\+djhf4gx98+xf7j+', interval=1)
+# Hello world!
 
