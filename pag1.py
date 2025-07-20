@@ -115,7 +115,50 @@ print(p.position())
 
 # p.typewrite(['a', 'b', 'c', '\n','left', 'backspace', 'enter', 'f1'], interval=2)
 
-p.typewrite(['\n', 'o'], interval=2)
-p.typewrite('64df8gh\+djhf4gx98+xf7j+', interval=1)
+# p.typewrite(['\n', 'o'], interval=2)
+# p.typewrite('64df8gh\+djhf4gx98+xf7j+', interval=1)
+
 # Hello world!
+
+# p.hotkey('ctrl', 'c')  # ctrl-c to copy
+
+# p.hotkey('ctrl', 'v')  # ctrl-v to paste
+
+
+# p.moveTo(70, 150, duration=2)
+# p.dragTo(100, 400,  duration=2)
+
+# p.hotkey('ctrl', 'c')  # ctrl-c to copy
+# p.moveTo(903, 870, duration=2)
+# p.hotkey('ctrl', 'v')  # ctrl-v to paste
+
+
+# p.keyDown('.')
+# p.keyUp('A')
+
+
+# p.keyDown('shift')      # Press and hold Shift
+# p.typewrite('hello', interval=0.5 )    # Types 'HELLO' because shift is held
+# # p.PAUSE = 3
+# p.keyUp('shift')
+
+# p.press('a')
+# time.sleep(0.1)
+# p.keyUp('a')
+
+# p.write('i'*20, interval=0.2)
+# output: 
+# aiiiiiiiiiiiiiiiiiiii
+# p.write(['a', 'g'], interval=0.2)
+
+# p.write('agfcl')
+
+
+# p.alert('This displays some text with an OK button.')
+# print(p.confirm('This displays text and has an OK and Cancel button.'))
+
+
+
+# 'OK'
+# p.prompt('This lets the user type in a string and press OK.')
 
