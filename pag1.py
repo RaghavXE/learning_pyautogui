@@ -4,7 +4,7 @@ import pyautogui as p
 
 os.system('cls') # Clears terminal on Windows
 
-#If you move your mouse to the top-left corner of the screen (0, 0),
+# If you move your mouse to the top-left corner of the screen (0, 0),
 # the script immediately raises an exception and stops.
 p.FAILSAFE = True
 
@@ -17,72 +17,72 @@ print(p.size())  # Shows Size(width=?, height=?)
 print("Is (1292, 148) on screen?")
 print(p.onScreen(1292, 148))  # True or False
 
-# p.PAUSE = 2.5  # Pause after pyautogui actions (not print statements)
+p.PAUSE = 2.5  # Pause after pyautogui actions (not print statements)
 
 # If you want a pause BEFORE checking mouse position again
-# time.sleep(2.5)
+time.sleep(2.5)
 
-# print("Mouse position again after 2.5 seconds:")
+print("Mouse position again after 2.5 seconds:")
 print(p.position())
-# p.PAUSE = 2.5
+p.PAUSE = 2.5
 
-# p.moveTo(500, 500, duration=2) 
+p.moveTo(500, 500, duration=2) 
 # move mouse to XY coordinates over num_second seconds
 
-# p.moveRel(200, 200, duration=2)
-# # move mouse relative to its current position
+p.moveRel(200, 200, duration=2)
+# move mouse relative to its current position
 # So if your mouse is at (100, 100) and you run moveRel(200, 200), it will go to:
 # New position = (100+200, 100+200) = (300, 300)
 
-# p.dragTo(100, 322, duration=5)  # drag mouse to XY
-# # means it will select area from where mouse is being dragged.
+p.dragTo(100, 322, duration=5)  # drag mouse to XY
+# means it will select area from where mouse is being dragged.
 # Drag from current position to (600, 300) over 2 seconds
-# p.dragTo(600, 300, duration=2, button='left')
+p.dragTo(600, 300, duration=2, button='left')
 
-# p.dragRel(500, 100, duration=5, button='left')  # drag mouse relative to its current position
+p.dragRel(500, 100, duration=5, button='left')  # drag mouse relative to its current position
 
 
-# p.click(x=200, y=500, clicks=2, interval=0.2, button='left')
+p.click(x=200, y=500, clicks=2, interval=0.2, button='left')
 
-# p.rightClick(x=40, y=500)
-# p.PAUSE = 2
-# p.middleClick(x=45, y=200)
-# p.PAUSE = 2
-# p.doubleClick(x=80, y=600)
-# p.PAUSE = 2
-# p.tripleClick(x=90, y=400)
+p.rightClick(x=40, y=500)
+p.PAUSE = 2
+p.middleClick(x=45, y=200)
+p.PAUSE = 2
+p.doubleClick(x=80, y=600)
+p.PAUSE = 2
+p.tripleClick(x=90, y=400)
 
 # Scroll down
-# p.scroll(-300)
-# print("Scrolled down.")
+p.scroll(-300)
+print("Scrolled down.")
 
-# time.sleep(2)
+time.sleep(2)
 
-# # Scroll up
-# p.scroll(300)
-# print("Scrolled up.")
+# Scroll up
+p.scroll(300)
+print("Scrolled up.")
 
-# # Move to x=500, y=500 and then scroll down
-# p.scroll(-500, x=500, y=500)
+# Move to x=500, y=500 and then scroll down
+p.scroll(-500, x=500, y=500)
 
-# print("Moved and scrolled.")
+print("Moved and scrolled.")
 
 
 # Scroll down slowly and smoothly
-# for i in range(20):        # Scroll 20 times
-#     p.scroll(-5)           # Scroll down 5 units (small step)
-#     time.sleep(0.0001)        # Pause to make scroll slow
+for i in range(20):        # Scroll 20 times
+    p.scroll(-5)           # Scroll down 5 units (small step)
+    time.sleep(0.0001)        # Pause to make scroll slow
     
     
     
   # Scroll down little faster and less smooth
-# for i in range(20):        # Scroll 20 times
-#     p.scroll(-50)           # Scroll down 5 units (small step)
+for i in range(20):        # Scroll 20 times
+    p.scroll(-50)           # Scroll down 5 units (small step)
       
       
       
-# p.mouseDown(x=128, y=146, button='left')  # Press down (start of click/drag)
-# p.mouseUp(x=800, y=600, button='left')    # Release (end of click/drag)
+p.mouseDown(x=128, y=146, button='left')  # Press down (start of click/drag)
+p.mouseUp(x=800, y=600, button='left')    # Release (end of click/drag)
 # The reason your code is not selecting text is because pyautogui.mouseDown() 
 # and mouseUp() do not move the mouse between the two points — they just press
 # and release at whatever position the cursor is currently at (unless you 
@@ -90,83 +90,83 @@ print(p.position())
 
 
 
-#To select:
+# To select:
 
 # Move to start point
-# p.moveTo(128, 146)
-# p.mouseDown(button='left')  # Press and hold the mouse button
+p.moveTo(128, 146)
+p.mouseDown(button='left')  # Press and hold the mouse button
 
-# # Move to end point (this is what actually selects)
-# p.moveTo(800, 600, duration=0.5)
+# Move to end point (this is what actually selects)
+p.moveTo(800, 600, duration=0.5)
 
-# # Release the mouse button
-# p.mouseUp(button='left')
+# Release the mouse button
+p.mouseUp(button='left')
 
 
-# #  OR use p.moveTo and p.dragTo function.
-# import pyautogui as p
+#  OR use p.moveTo and p.dragTo function.
+import pyautogui as p
 
-# p.moveTo(148, 170)  # Go to start position
-# p.dragTo(500, 500, duration=1, button='left')  # Drag while holding left mouse button
+p.moveTo(148, 170)  # Go to start position
+p.dragTo(500, 500, duration=1, button='left')  # Drag while holding left mouse button
 
 
 
 # Key presses go to wherever the keyboard cursor is at function-calling time.
 
-# p.typewrite(['a', 'b', 'c', '\n','left', 'backspace', 'enter', 'f1'], interval=2)
+p.typewrite(['a', 'b', 'c', '\n','left', 'backspace', 'enter', 'f1'], interval=2)
 
-# p.typewrite(['\n', 'o'], interval=2)
-# p.typewrite('64df8gh\+djhf4gx98+xf7j+', interval=1)
+p.typewrite(['\n', 'o'], interval=2)
+p.typewrite('64df8gh\+djhf4gx98+xf7j+', interval=1)
 
 # Hello world!
 
-# p.hotkey('ctrl', 'c')  # ctrl-c to copy
+p.hotkey('ctrl', 'c')  # ctrl-c to copy
 
-# p.hotkey('ctrl', 'v')  # ctrl-v to paste
-
-
-# p.moveTo(70, 150, duration=2)
-# p.dragTo(100, 400,  duration=2)
-
-# p.hotkey('ctrl', 'c')  # ctrl-c to copy
-# p.moveTo(903, 870, duration=2)
-# p.hotkey('ctrl', 'v')  # ctrl-v to paste
+p.hotkey('ctrl', 'v')  # ctrl-v to paste
 
 
-# p.keyDown('.')
-# p.keyUp('A')
+p.moveTo(70, 150, duration=2)
+p.dragTo(100, 400,  duration=2)
+
+p.hotkey('ctrl', 'c')  # ctrl-c to copy
+p.moveTo(903, 870, duration=2)
+p.hotkey('ctrl', 'v')  # ctrl-v to paste
 
 
-# p.keyDown('shift')      # Press and hold Shift
-# p.typewrite('hello', interval=0.5 )    # Types 'HELLO' because shift is held
-# # p.PAUSE = 3
-# p.keyUp('shift')
+p.keyDown('.')
+p.keyUp('A')
 
-# p.press('a')
-# time.sleep(0.1)
-# p.keyUp('a')
 
-# p.write('i'*20, interval=0.2)
+p.keyDown('shift')      # Press and hold Shift
+p.typewrite('hello', interval=0.5 )    # Types 'HELLO' because shift is held
+# p.PAUSE = 3
+p.keyUp('shift')
+
+p.press('a')
+time.sleep(0.1)
+p.keyUp('a')
+
+p.write('i'*20, interval=0.2)
 # output: 
 # aiiiiiiiiiiiiiiiiiiii
-# p.write(['a', 'g'], interval=0.2)
+p.write(['a', 'g'], interval=0.2)
 
-# p.write('agfcl')
-
-
-# p.alert('This displays some text with an OK button.')
-# print(p.confirm('This displays text and has an OK and Cancel button.'))
+p.write('agfcl')
 
 
+p.alert('This displays some text with an OK button.')
+print(p.confirm('This displays text and has an OK and Cancel button.'))
 
-# 'OK'
-# p.prompt('This lets the user type in a string and press OK.')
 
 
-# # Take screenshot and save it as a file
+'OK'
+p.prompt('This lets the user type in a string and press OK.')
+
+
+# Take screenshot and save it as a file
 p.screenshot('img.png')
 
-# # Or just get the screenshot as a Pillow image object
+# Or just get the screenshot as a Pillow image object
 a = p.screenshot()
 a.show()  # Optional: shows the image
 
